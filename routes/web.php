@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 })->middleware(['auth'])->name('home');
+
+Route::get('/user', function () {
+    return view('user.index');
+})->middleware(['auth'])->name('user.index');
+
+Route::prefix('users')->group(function () {
+    Route::get('/', [UserController::class, 'index'])->name('user.index');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
