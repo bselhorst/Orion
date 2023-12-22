@@ -3,20 +3,20 @@
   <!-- Brand Logo Light -->
   <a href="index.php" class="logo logo-light">
     <span class="logo-lg">
-      <img src="assets/images/logo.png" alt="logo" />
+      <img src="{{ asset('assets/images/logo-LARGO-removebg.png') }}" alt="logo" style="height: 52px"/>
     </span>
-    <span class="logo-sm">
-      <img src="assets/images/logo-sm.png" alt="small logo" />
+    <span class="logo-sm" style="margin-left: -13px">
+      <img src="{{ asset('assets/images/logo-ICO-removebg.png') }}" alt="small logo" style="height: 52px" />
     </span>
   </a>
 
   <!-- Brand Logo Dark -->
   <a href="index.php" class="logo logo-dark">
     <span class="logo-lg">
-      <img src="assets/images/logo-dark.png" alt="dark logo" />
+      <img src="{{ asset('assets/images/logo-LARGO-removebg.png') }}" alt="dark logo" />
     </span>
     <span class="logo-sm">
-      <img src="assets/images/logo-sm.png" alt="small logo" />
+      <img src="{{ asset('assets/images/logo-ICO-removebg.png') }}" alt="small logo" />
     </span>
   </a>
 
@@ -38,7 +38,7 @@
   <!-- Sidebar -left -->
   <div class="h-100" id="leftside-menu-container" data-simplebar>
     <!-- Leftbar User -->
-    <div class="leftbar-user">
+    {{-- <div class="leftbar-user">
       <a href="pages-profile.php">
         <img
           src="assets/images/users/avatar-1.jpg"
@@ -48,7 +48,7 @@
         />
         <span class="leftbar-user-name mt-2">Tosha Minner</span>
       </a>
-    </div>
+    </div> --}}
 
     <!--- Sidemenu -->
     <ul class="side-nav">

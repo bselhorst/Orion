@@ -1,7 +1,7 @@
 @include('layouts.main')
 
 <head>
-    <title>Log In | Attex - Bootstrap 5 Admin & Dashboard Template</title>
+    <title>Orion</title>
     @include('layouts.title-meta')
     @include('layouts.head-css')
 </head>
@@ -15,12 +15,12 @@
             <div class="card-body d-flex flex-column h-100 gap-3">
 
                 <!-- Logo -->
-                <div class="auth-brand text-center text-lg-start">
-                    <a href="index.php" class="logo-dark">
-                        <span><img src="assets/images/logo-dark.png" alt="dark logo" height="22"></span>
+                <div class="auth-brand text-center" >
+                    <a href="/" class="logo-dark">
+                        <span><img src="{{ asset('assets/images/logo-branca-LARGO-removebg.png') }}" alt="dark logo" height="128"></span>
                     </a>
-                    <a href="index.php" class="logo-light">
-                        <span><img src="assets/images/logo.png" alt="logo" height="22"></span>
+                    <a href="/" class="logo-light">
+                        <span><img src="{{asset('assets/images/logo-LARGO-removebg.png') }}" alt="logo" height="22"></span>
                     </a>
                 </div>
 
@@ -103,7 +103,7 @@
     @include('layouts.footer-scripts')
 
     <!-- App js -->
-    <script src="assets/js/app.min.js"></script>
+    <script src="{{ asset('assets/js/app.js') }}"></script>
 
 </body>
 

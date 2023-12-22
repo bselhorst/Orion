@@ -1,35 +1,10 @@
 <div class="navbar-custom">
     <div class="topbar container-fluid">
         <div class="d-flex align-items-center gap-lg-2 gap-1">
-
-           
-            <div class="logo-topbar">
-                
-                <a href="index.php" class="logo-light">
-                    <span class="logo-lg">
-                        <img src="assets/images/logo.png" alt="logo">
-                    </span>
-                    <span class="logo-sm">
-                        <img src="assets/images/logo-sm.png" alt="small logo">
-                    </span>
-                </a>
-
-                
-                <a href="index.php" class="logo-dark">
-                    <span class="logo-lg">
-                        <img src="assets/images/logo-dark.png" alt="dark logo">
-                    </span>
-                    <span class="logo-sm">
-                        <img src="assets/images/logo-sm.png" alt="small logo">
-                    </span>
-                </a>
-            </div>
-
             
             <button class="button-toggle-menu">
                 <i class="ri-menu-2-fill"></i>
             </button>
-
             
             <button class="navbar-toggle" data-bs-toggle="collapse" data-bs-target="#topnav-menu-content">
                 <div class="lines">
@@ -38,8 +13,29 @@
                     <span></span>
                 </div>
             </button>
-
         </div>
+
+        <div class="logo-topbar">
+                
+                <a href="index.php" class="logo-light">
+                    <span class="logo-lg">
+                        <img src="assets/images/logo-branca-LARGO-removebg.png" alt="logo" style="border: 1px solid">
+                    </span>
+                    <span class="logo-sm">
+                        <img src="assets/images/logo-branca-LARGO-removebg.png" alt="small logo" style="border: 1px solid">
+                    </span>
+                </a>
+
+                
+                <a href="index.php" class="logo-dark">
+                    <span class="logo-lg">
+                        <img src="assets/images/logo-branca-LARGO-removebg.png" alt="dark logo">
+                    </span>
+                    <span class="logo-sm">
+                        <img src="assets/images/logo-branca-LARGO-removebg.png" alt="small logo" style="height: 52px">
+                    </span>
+                </a>
+            </div>
 
         <ul class="topbar-menu d-flex align-items-center gap-3">
 

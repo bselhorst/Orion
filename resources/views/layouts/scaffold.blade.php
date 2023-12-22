@@ -1,7 +1,7 @@
 @include('layouts.main')
 
 <head>
-    <title>Starter Page | Attex - Bootstrap 5 Admin & Dashboard Template</title>
+    <title>Orion</title>
     @include('layouts.title-meta')
     @include('layouts.head-css')
 </head>

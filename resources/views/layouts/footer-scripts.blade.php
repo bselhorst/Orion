@@ -1,2 +1,2 @@
 <!-- Vendor js -->
-<script src="assets/js/vendor.min.js"></script>
+<script src="{{ asset('assets/js/vendor.min.js')}}"></script>
