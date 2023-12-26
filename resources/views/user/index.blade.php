@@ -1,14 +1,14 @@
 @extends('layouts.scaffold')
 
 @section('title')
-    Teste
+    Usuários
 @endsection
 
 @section('content')
 
     <x-table 
-    :title="'Tabela'" 
-    :description="'Descrição da tabela'" 
+    :title="'Tabela de Usuários'" 
+    :description="'Abaixo a tabela de todos os usuários do sistema.'" 
     :header_columns="['ID', 'Nome', 'Email']" 
     :columns="['id', 'name', 'email']" 
     :data="$data" 

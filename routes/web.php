@@ -25,6 +25,7 @@ Route::get('/user', function () {
 
 Route::prefix('users')->group(function () {
     Route::get('/', [UserController::class, 'index'])->name('user.index');
+    Route::delete('/{id}', [UserController::class, 'destroy'])->name('user.destroy');
 });
 
 Route::get('/dashboard', function () {
