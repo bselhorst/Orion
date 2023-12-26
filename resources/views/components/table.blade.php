@@ -30,12 +30,12 @@
                                                 <i class="ri-delete-bin-2-line"></i>
                                             </a>
                                         </div> --}}
-                                        {{-- <div style="display: inline-block" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="danger-tooltip" data-bs-title="Excluir registro">
+                                        <div style="display: inline-block" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="danger-tooltip" data-bs-title="Excluir registro">
                                             <a href="javascript: deleteModal({{ $item->id }});" class="text-reset fs-16 px-1"> 
                                                 <i class="ri-delete-bin-2-line"></i>
                                             </a>
-                                        </div> --}}
-                                        <div style="display: inline-block" data-bs-toggle="modal" data-bs-target="#modal-exclusao{{$item->id}}" >
+                                        </div>
+                                        {{-- <div style="display: inline-block" data-bs-toggle="modal" data-bs-target="#modal-exclusao{{$item->id}}" >
                                             <a href="javascript: void(0)"  class="text-reset fs-16 px-1" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="danger-tooltip" data-bs-title="Excluir registro"> 
                                                 <i class="ri-delete-bin-2-line"></i>
                                             </a>
@@ -62,7 +62,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> --}}
                                     </td>
                                 </tr>
                             @endforeach
@@ -86,16 +86,16 @@
     </div>
 </div>
 
-{{-- <script>
+<script>
     function deleteModal(id){
         document.getElementById('id').value = id;
-        $('#form-delete').attr('action', "route('destroy', "+id+")");
+        $('#form-delete').attr('action', "/users/"+id);
         $('#modal-exclusao').modal('show');
     }
-</script> --}}
+</script>
 {{-- <button  type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#fill-danger-modal">Danger Filled</button> --}}
 
-{{-- <div id="modal-exclusao" class="modal fade" data-bs-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="fill-danger-modalLabel" aria-hidden="true">
+<div id="modal-exclusao" class="modal fade" data-bs-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="fill-danger-modalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content modal-filled bg-danger">
             <div class="modal-header">
@@ -109,6 +109,8 @@
             </div>
             <div class="modal-footer">
                 <form action="" id="form-delete" method="POST">
+                    @csrf
+                    @method('delete')
                     <input type="hidden" name="id" id="id" /> 
                     <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
                     <button type="submit" class="btn btn-outline-light">Confirmar exclusão</button>
@@ -116,4 +118,4 @@
             </div>
         </div>
     </div>
-</div> --}}
+</div>
