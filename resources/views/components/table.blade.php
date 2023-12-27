@@ -3,7 +3,10 @@
     <div class="col-xl-12">
         <div class="card">
             <div class="card-body">
-                <h4 class="header-title">{{ $title }}</h4>
+                <div class="table-header">
+                    <h4 class="header-title">{{ $title }}</h4>
+                    <a href="{{url()->current()}}/create" class="btn btn-success btn-create">Cadastrar</a>
+                </div>
                 <p class="text-muted fs-14">
                     {{ $description }}
                 </p>
@@ -24,7 +27,9 @@
                                         <td> {{ $item->$column }} </td>
                                     @endforeach
                                     <td>
-                                        <a href="javascript: void(0);" class="text-reset fs-16 px-1"> <i class="ri-settings-3-line"></i></a>
+                                        <div style="display: inline-block" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="primary-tooltip" data-bs-title="Editar registro">
+                                            <a href="{{url()->current()}}/edit/{{$item->id}}" class="text-reset fs-16 px-1"> <i class="ri-pencil-line"></i></a>
+                                        </div>                                       
 
                                         @if ($item->id != Auth::user()->id)
                                             <div style="display: inline-block" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="danger-tooltip" data-bs-title="Excluir registro">
@@ -40,7 +45,7 @@
                         </tbody>
                     </table>
                 </div>
-                <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 15px">
+                <div class="pagination-div">
                     <p class="small text-muted">
                         {!! __('Mostrando de') !!}
                         <span class="fw-semibold">{{ $data->firstItem() }}</span>
@@ -89,3 +94,28 @@
         </div>
     </div>
 </div>
+
+<style>
+    .pagination-div {
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+        padding-top: 15px
+    }
+
+    .table-header {
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center;
+    }
+
+    @media (max-width: 480px){ 
+        .table-header{
+            flex-direction: column-reverse;
+            gap: 10px
+        }
+        .btn-create{
+            width: 100%;
+        }
+    };
+</style>
