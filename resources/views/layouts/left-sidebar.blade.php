@@ -117,6 +117,17 @@
           </ul>
         </div>
       </li>
+
+      <li class="side-nav-title">Admin</li>
+
+      <li class="side-nav-item">
+        <a href="/users" class="side-nav-link">
+          <i class="ri-calendar-event-line"></i>
+          <span> Usuarios </span>
+        </a>
+      </li>
+
+
     </ul>
     <!--- End Sidemenu -->
 
