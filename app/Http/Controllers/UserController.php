@@ -23,7 +23,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('user.form');
     }
 
     /**
@@ -31,7 +31,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return Redirect::route('user.index')->with('success', 'Registro adicionado com sucesso!');
     }
 
     /**
@@ -47,7 +47,8 @@ class UserController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data = User::findOrFail($id);
+        return view('user.form', compact('data'));
     }
 
     /**
@@ -55,7 +56,7 @@ class UserController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        return Redirect::route('user.index')->with('success', 'Registro atualizado com sucesso!');
     }
 
     /**
