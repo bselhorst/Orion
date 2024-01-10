@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Validation\Rules;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -31,6 +33,22 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+        $validated = $request->validateWithBag('messages', [
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
+            'password' => ['required', 'min:6'],
+        ],[
+            'required' => 'Campo obrigatório',
+            'min' => 'O campo senha deve ter pelo menos 6 caracteres',
+            'unique' => 'Esse email já existe na base de dados'
+        ]);
+
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
+
         return Redirect::route('user.index')->with('success', 'Registro adicionado com sucesso!');
     }
 
@@ -56,6 +74,32 @@ class UserController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        $user = User::findOrFail($id);
+        
+        ($user->email != $request['email']) ? $email = ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class] : $email = [];
+
+        if(@$request->password){
+            $validated = $request->validateWithBag('messages', [
+                'name' => ['required', 'string', 'max:255'],
+                'email' => $email,
+                'password' => ['required', 'min:6']
+            ],[
+                'required' => 'Campo obrigatório',
+                'unique' => 'Já existe outro usuário com esse email na base de dados'
+            ]);  
+            $validated['password'] = Hash::make($request->password);
+        }else{
+            $validated = $request->validateWithBag('messages', [
+                'name' => ['required', 'string', 'max:255'],
+                'email' => $email,
+            ],[
+                'required' => 'Campo obrigatório',
+                'unique' => 'Já existe outro usuário com esse email na base de dados'
+            ]);        
+        }
+
+        $user->update($validated);
+
         return Redirect::route('user.index')->with('success', 'Registro atualizado com sucesso!');
     }
 

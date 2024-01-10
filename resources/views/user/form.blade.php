@@ -12,8 +12,8 @@
                             @method('PATCH')
                         @endif
                         <div class="mb-3">
-                            <label class="form-label" for="nome">Nome</label>
-                            <input type="text" class="form-control" id="nome" placeholder="Nome" value="{{ @$data->name }}" required>
+                            <label class="form-label" for="name">Nome</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Nome" value="{{ @$data->name }}" required>
                             {{-- <div class="valid-feedback">
                                 Looks good!
                             </div> --}}
@@ -25,21 +25,19 @@
                             <label class="form-label" for="email">Email</label>
                             <div class="input-group">
                                 <span class="input-group-text" id="inputGroupPrepend">@</span>
-                                <input type="email" class="form-control" id="email" placeholder="Email" aria-describedby="inputGroupPrepend" value="{{ @$data->email }}" required>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Email" aria-describedby="inputGroupPrepend" value="{{ @$data->email }}" required>
                                 <div class="invalid-feedback">
                                     Campo obrigatório.
                                 </div>
                             </div>
                         </div>
-                        @if (!@$data)
-                            <div class="mb-3">
-                                <label class="form-label" for="senha">Senha</label>
-                                <input type="password" class="form-control" id="senha" placeholder="Senha" required>
-                                <div class="invalid-feedback">
-                                    Campo obrigatório.
-                                </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="password">Senha</label>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Senha" {{ (@!$data)?"required":"" }} >
+                            <div class="invalid-feedback">
+                                Campo obrigatório.
                             </div>
-                        @endif
+                        </div>
                         <button class="btn btn-primary" type="submit">{{ (@$data)?'Editar':'Cadastrar' }}</button>
                     </form>
                 </div> <!-- end card-body-->
