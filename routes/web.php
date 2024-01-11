@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProjetoController;
 use App\Http\Controllers\UserController;
 
 /*
@@ -20,6 +21,16 @@ Route::middleware('auth')->group(function() {
     // Main route
     Route::get('/', function () {
         return view('home');
+    });
+
+    // Projeto
+    Route::prefix('projetos')->group(function (){
+        Route::post('/', [ProjetoController::class, 'store'])->name('projeto.store');
+        Route::get('/', [ProjetoController::class, 'index'])->name('projeto.index');
+        Route::get('/create', [ProjetoController::class, 'create'])->name('projeto.create');
+        Route::get('/edit/{id}', [ProjetoController::class, 'edit'])->name('projeto.edit');
+        Route::patch('/edit/{id}', [ProjetoController::class, 'update'])->name('projeto.update');
+        Route::delete('/{id}', [ProjetoController::class, 'destroy'])->name('projeto.destroy');
     });
 
     // Users routes

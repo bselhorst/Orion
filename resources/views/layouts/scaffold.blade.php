@@ -60,6 +60,8 @@
 
     @include('layouts.footer-scripts')
 
+    <script src="/assets/js/jquery.mask.min.js"></script>
+
     <!-- App js -->
     <script src="/assets/js/app.js"></script>
 

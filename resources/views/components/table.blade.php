@@ -24,20 +24,25 @@
                             @foreach ($data as $item)
                                 <tr>
                                     @foreach ($columns as $column)
-                                        <td> {{ $item->$column }} </td>
+                                        @php($value = $item->$column)
+                                        @if ($column == 'valor')
+                                            <td>{{ number_format( floatval($value), 2, ',', '.') }} </td>
+                                        @else
+                                            <td> {{ $value }} </td>
+                                        @endif
                                     @endforeach
                                     <td>
                                         <div style="display: inline-block" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="primary-tooltip" data-bs-title="Editar registro">
                                             <a href="{{url()->current()}}/edit/{{$item->id}}" class="text-reset fs-16 px-1"> <i class="ri-pencil-line"></i></a>
                                         </div>                                       
 
-                                        @if ($item->id != Auth::user()->id)
-                                            <div style="display: inline-block" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="danger-tooltip" data-bs-title="Excluir registro">
-                                                <a href="javascript: deleteModal({{ $item->id }});" class="text-reset fs-16 px-1"> 
-                                                    <i class="ri-delete-bin-2-line"></i>
-                                                </a>
-                                            </div>
-                                        @endif                                        
+                                        {{-- @if ($item->id != Auth::user()->id) --}}
+                                        <div style="display: inline-block" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="danger-tooltip" data-bs-title="Excluir registro">
+                                            <a href="javascript: deleteModal({{ $item->id }});" class="text-reset fs-16 px-1"> 
+                                                <i class="ri-delete-bin-2-line"></i>
+                                            </a>
+                                        </div>
+                                        {{-- @endif                                         --}}
                                         
                                     </td>
                                 </tr>
@@ -65,7 +70,7 @@
 <script>
     function deleteModal(id){
         document.getElementById('id').value = id;
-        $('#form-delete').attr('action', "/users/"+id);
+        $('#form-delete').attr('action', window.location.pathname+"/"+id);
         $('#modal-exclusao').modal('show');
     }
 </script>
