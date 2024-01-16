@@ -1,7 +1,7 @@
 @extends('layouts.scaffold')
 
 @section('title')
-    Projetos
+    Orçamento
 @endsection
 
 @section('content')
@@ -13,19 +13,19 @@
     :data="$data" 
     /> --}}
     @php
-        $header_columns = ['ID', 'Título', 'Valor'];
-        $columns = ['id', 'titulo', 'valor'];
+        $header_columns = ['ID', 'Programa de trabalho', 'Fonte', 'Natureza', 'Especificação', 'Valor'];
+        $columns = ['id', 'programa_de_trabalho', 'fonte', 'natureza_da_despesa', 'especificacao', 'valor'];
     @endphp
     <div class="row">
         <div class="col-xl-12">
             <div class="card">
                 <div class="card-body">
                     <div class="table-header">
-                        <h4 class="header-title">Lista de Projetos</h4>
+                        <h4 class="header-title">Lista de Orçamentos do Projeto: <b>{{ $projeto->titulo }}</b></h4>
                         <a href="{{url()->current()}}/create" class="btn btn-success btn-create">Cadastrar</a>
                     </div>
                     <p class="text-muted fs-14">
-                        Abaixo a lista com todos os projetos.
+                        Abaixo a lista com todos os orçamentos.
                     </p>
                     <div class="table-responsive-sm">
                         <table class="table table-striped table-centered mb-0">
@@ -50,7 +50,7 @@
                                         @endforeach
                                         <td>
                                             <div style="display: inline-block" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="primary-tooltip" data-bs-title="Orçamento">
-                                                <a href="{{url()->current()}}/{{$item->id}}/orcamentos" class="text-reset fs-16 px-1"> <i class="ri-pencil-line"></i></a>
+                                                <a href="{{url()->current()}}/edit/{{$item->id}}" class="text-reset fs-16 px-1"> <i class="ri-pencil-line"></i></a>
                                             </div> 
                                             <div style="display: inline-block" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="primary-tooltip" data-bs-title="Editar registro">
                                                 <a href="{{url()->current()}}/edit/{{$item->id}}" class="text-reset fs-16 px-1"> <i class="ri-pencil-line"></i></a>

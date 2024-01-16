@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProjetoController;
+use App\Http\Controllers\ProjetoOrcamentoController;
 use App\Http\Controllers\UserController;
 
 /*
@@ -31,6 +32,16 @@ Route::middleware('auth')->group(function() {
         Route::get('/edit/{id}', [ProjetoController::class, 'edit'])->name('projeto.edit');
         Route::patch('/edit/{id}', [ProjetoController::class, 'update'])->name('projeto.update');
         Route::delete('/{id}', [ProjetoController::class, 'destroy'])->name('projeto.destroy');
+
+        Route::prefix('/{id_projeto}/orcamentos')->group(function (){
+            Route::post('/', [ProjetoOrcamentoController::class, 'store'])->name('projeto.orcamento.store');
+            Route::get('/', [ProjetoOrcamentoController::class, 'index'])->name('projeto.orcamento.index');
+            Route::get('/create', [ProjetoOrcamentoController::class, 'create'])->name('projeto.orcamento.create');
+            Route::get('/edit/{id}', [ProjetoOrcamentoController::class, 'edit'])->name('projeto.orcamento.edit');
+            Route::patch('/edit/{id}', [ProjetoOrcamentoController::class, 'update'])->name('projeto.orcamento.update');
+            Route::delete('/{id}', [ProjetoOrcamentoController::class, 'destroy'])->name('projeto.orcamento.destroy');
+        });
+
     });
 
     // Users routes

@@ -36,8 +36,8 @@
                             <x-fields :title="'Data Término'" :name="'data_termino'" :description="''" :type="'date'" :required="true" :class="'mb-3 col-md-4'" :data="@$data"/>
                         </div>
                         <div style="display: flex; justify-content: space-between">
-                            <button class="btn btn-primary" type="submit">{{ (@$data)?'Editar':'Cadastrar' }}</button>
                             <a href="{{ url()->previous() }}" class="btn btn-danger">Voltar</a>
+                            <button class="btn btn-primary" type="submit">{{ (@$data)?'Editar':'Cadastrar' }}</button>
                         </div>
                     </form>
                 </div> <!-- end card-body-->

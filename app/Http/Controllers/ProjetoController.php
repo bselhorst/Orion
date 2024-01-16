@@ -45,7 +45,7 @@ class ProjetoController extends Controller
         Projeto::create([
             'titulo' => $request->titulo,
             'instituicao_executora' => $request->instituicao_executora,
-            'responsavel_ie' => $request->responsavel_ir,
+            'responsavel_ie' => $request->responsavel_ie,
             'instituicao_concedente' => $request->instituicao_concedente,
             'responsavel_ic' => $request->responsavel_ic,
             'objeto' => $request->objeto,
@@ -97,7 +97,7 @@ class ProjetoController extends Controller
         $data->update([
             'titulo' => $request->titulo,
             'instituicao_executora' => $request->instituicao_executora,
-            'responsavel_ie' => $request->responsavel_ir,
+            'responsavel_ie' => $request->responsavel_ie,
             'instituicao_concedente' => $request->instituicao_concedente,
             'responsavel_ic' => $request->responsavel_ic,
             'objeto' => $request->objeto,
