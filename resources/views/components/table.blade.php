@@ -34,12 +34,12 @@
                                     <td>
 
                                         <div style="display: inline-block" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="primary-tooltip" data-bs-title="Editar registro">
-                                            <a href="{{url()->current()}}/edit/{{$item->id}}" class="text-reset fs-16 px-1"> <i class="ri-pencil-line"></i></a>
+                                            <a href="{{url()->current()}}/edit/{{$item->id}}" class="text-reset px-1" style="font-size: 20px"> <i class="ri-pencil-line"></i></a>
                                         </div>                                       
 
                                         {{-- @if ($item->id != Auth::user()->id) --}}
                                         <div style="display: inline-block" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="danger-tooltip" data-bs-title="Excluir registro">
-                                            <a href="javascript: deleteModal({{ $item->id }});" class="text-reset fs-16 px-1"> 
+                                            <a href="javascript: deleteModal({{ $item->id }});" class="text-reset px-1" style="font-size: 20px"> 
                                                 <i class="ri-delete-bin-2-line"></i>
                                             </a>
                                         </div>
