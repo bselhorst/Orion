@@ -18,18 +18,44 @@ class PermissionSeeder extends Seeder
         $role_admin = Role::create(['name' => 'Admin']);
         $role_user = Role::create(['name' => 'User']);
 
-        // Criando as permissões
-        $permission = Permission::create(['name' => 'Create Users']);
+        // Criando as permissões de usuário
+        $permission = Permission::create(['name' => 'user.create']);
         $role_admin->givePermissionTo($permission);
 
-        $permission = Permission::create(['name' => 'Read Users']);
+        $permission = Permission::create(['name' => 'user.read']);
         $role_admin->givePermissionTo($permission);
         $role_user->givePermissionTo($permission);
 
-        $permission = Permission::create(['name' => 'Update Users']);
+        $permission = Permission::create(['name' => 'user.update']);
         $role_admin->givePermissionTo($permission);
 
-        $permission = Permission::create(['name' => 'Delete Users']);
+        $permission = Permission::create(['name' => 'user.delete']);
+        $role_admin->givePermissionTo($permission);
+
+        // Criando as permissões de Projeto
+        $permission = Permission::create(['name' => 'projeto.create']);
+        $role_admin->givePermissionTo($permission);
+
+        $permission = Permission::create(['name' => 'projeto.read']);
+        $role_admin->givePermissionTo($permission);
+
+        $permission = Permission::create(['name' => 'projeto.update']);
+        $role_admin->givePermissionTo($permission);
+
+        $permission = Permission::create(['name' => 'projeto.delete']);
+        $role_admin->givePermissionTo($permission);
+
+        // Criando as permissões de Orçamento
+        $permission = Permission::create(['name' => 'projeto.orcamento.create']);
+        $role_admin->givePermissionTo($permission);
+
+        $permission = Permission::create(['name' => 'projeto.orcamento.read']);
+        $role_admin->givePermissionTo($permission);
+
+        $permission = Permission::create(['name' => 'projeto.orcamento.update']);
+        $role_admin->givePermissionTo($permission);
+
+        $permission = Permission::create(['name' => 'projeto.orcamento.delete']);
         $role_admin->givePermissionTo($permission);
     }
 }

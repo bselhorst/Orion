@@ -78,7 +78,7 @@
         </div>
       </li>
 
-      <li class="side-nav-title">Apps</li>
+      {{-- <li class="side-nav-title">Apps</li>
 
       <li class="side-nav-item">
         <a href="apps-calendar.php" class="side-nav-link">
@@ -116,17 +116,27 @@
             </li>
           </ul>
         </div>
+      </li> --}}
+
+      @canany(['projeto.create', 'projeto.read', 'projeto.update', 'projeto.delete'])
+      <li class="side-nav-title">Orçamento</li>
+      <li class="side-nav-item">
+        <a href="/projetos" class="side-nav-link">
+          <i class="ri-file-list-line"></i>
+          <span> Projetos </span>
+        </a>
       </li>
+      @endcanany
 
+      @canany(['user.create', 'user.read', 'user.update', 'user.delete'])
       <li class="side-nav-title">Admin</li>
-
       <li class="side-nav-item">
         <a href="/users" class="side-nav-link">
           <i class="ri-calendar-event-line"></i>
           <span> Usuarios </span>
         </a>
       </li>
-
+      @endcanany
 
     </ul>
     <!--- End Sidemenu -->

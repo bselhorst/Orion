@@ -22,7 +22,9 @@
                 <div class="card-body">
                     <div class="table-header">
                         <h4 class="header-title">Lista de Projetos</h4>
-                        <a href="{{url()->current()}}/create" class="btn btn-success btn-create">Cadastrar</a>
+                        @can('projeto.create')
+                            <a href="{{url()->current()}}/create" class="btn btn-success btn-create">Cadastrar</a>
+                        @endcan
                     </div>
                     <p class="text-muted fs-14">
                         Abaixo a lista com todos os projetos.
@@ -49,17 +51,23 @@
                                             @endif
                                         @endforeach
                                         <td>
-                                            <div style="display: inline-block;" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="primary-tooltip" data-bs-title="Orçamento">
-                                                <a href="{{url()->current()}}/{{$item->id}}/orcamentos" class="text-reset px-1" style="font-size: 20px"> <i class="ri-money-dollar-circle-fill"></i></a>
-                                            </div> 
-                                            <div style="display: inline-block" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="primary-tooltip" data-bs-title="Editar registro">
-                                                <a href="{{url()->current()}}/edit/{{$item->id}}" class="text-reset px-1" style="font-size: 20px"> <i class="ri-pencil-line"></i></a>
-                                            </div>                                      
-                                            <div style="display: inline-block" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="danger-tooltip" data-bs-title="Excluir registro">
-                                                <a href="javascript: deleteModal({{ $item->id }});" class="text-reset px-1" style="font-size: 20px"> 
-                                                    <i class="ri-delete-bin-2-line"></i>
-                                                </a>
-                                            </div>                                            
+                                            @can('projeto.orcamento.read')
+                                                <div style="display: inline-block;" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="primary-tooltip" data-bs-title="Orçamento">
+                                                    <a href="{{url()->current()}}/{{$item->id}}/orcamentos" class="text-reset px-1" style="font-size: 20px"> <i class="ri-money-dollar-circle-fill"></i></a>
+                                                </div> 
+                                            @endcan
+                                            @can('projeto.update')
+                                                <div style="display: inline-block" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="primary-tooltip" data-bs-title="Editar registro">
+                                                    <a href="{{url()->current()}}/edit/{{$item->id}}" class="text-reset px-1" style="font-size: 20px"> <i class="ri-pencil-line"></i></a>
+                                                </div> 
+                                            @endcan
+                                            @can('projeto.delete')                                     
+                                                <div style="display: inline-block" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="danger-tooltip" data-bs-title="Excluir registro">
+                                                    <a href="javascript: deleteModal({{ $item->id }});" class="text-reset px-1" style="font-size: 20px"> 
+                                                        <i class="ri-delete-bin-2-line"></i>
+                                                    </a>
+                                                </div>
+                                            @endcan                                            
                                         </td>
                                     </tr>
                                 @endforeach

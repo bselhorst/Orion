@@ -12,6 +12,7 @@
     :header_columns="['ID', 'Nome', 'Email']" 
     :columns="['id', 'name', 'email']" 
     :data="$data" 
+    :permission="'user'"
     />
 
 @endsection

@@ -1,11 +1,13 @@
-@props(['title', 'description', 'header_columns' => [], 'columns' => [], 'data' => []])
+@props(['title', 'description', 'header_columns' => [], 'columns' => [], 'data' => [], 'permission'])
 <div class="row">
     <div class="col-xl-12">
         <div class="card">
             <div class="card-body">
                 <div class="table-header">
                     <h4 class="header-title">{{ $title }}</h4>
-                    <a href="{{url()->current()}}/create" class="btn btn-success btn-create">Cadastrar</a>
+                    @can(@$permission.'.create')
+                        <a href="{{url()->current()}}/create" class="btn btn-success btn-create">Cadastrar</a>
+                    @endcan
                 </div>
                 <p class="text-muted fs-14">
                     {{ $description }}
@@ -32,19 +34,20 @@
                                         @endif
                                     @endforeach
                                     <td>
-
-                                        <div style="display: inline-block" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="primary-tooltip" data-bs-title="Editar registro">
-                                            <a href="{{url()->current()}}/edit/{{$item->id}}" class="text-reset px-1" style="font-size: 20px"> <i class="ri-pencil-line"></i></a>
-                                        </div>                                       
-
+                                        @can(@$permission.'.update')
+                                            <div style="display: inline-block" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="primary-tooltip" data-bs-title="Editar registro">
+                                                <a href="{{url()->current()}}/edit/{{$item->id}}" class="text-reset px-1" style="font-size: 20px"> <i class="ri-pencil-line"></i></a>
+                                            </div>
+                                        @endcan                                    
                                         {{-- @if ($item->id != Auth::user()->id) --}}
-                                        <div style="display: inline-block" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="danger-tooltip" data-bs-title="Excluir registro">
-                                            <a href="javascript: deleteModal({{ $item->id }});" class="text-reset px-1" style="font-size: 20px"> 
-                                                <i class="ri-delete-bin-2-line"></i>
-                                            </a>
-                                        </div>
-                                        {{-- @endif                                         --}}
-                                        
+                                        @can(@$permission.'.delete')
+                                            <div style="display: inline-block" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="danger-tooltip" data-bs-title="Excluir registro">
+                                                <a href="javascript: deleteModal({{ $item->id }});" class="text-reset px-1" style="font-size: 20px"> 
+                                                    <i class="ri-delete-bin-2-line"></i>
+                                                </a>
+                                            </div>
+                                        @endcan 
+                                        {{-- @endif                                         --}}                                        
                                     </td>
                                 </tr>
                             @endforeach
