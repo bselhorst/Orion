@@ -49,8 +49,8 @@
                                             @endif
                                         @endforeach
                                         <td>
-                                            <div style="display: inline-block" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="primary-tooltip" data-bs-title="Orçamento">
-                                                <a href="{{url()->current()}}/{{$item->id}}/orcamentos" class="text-reset fs-16 px-1"> <i class="ri-pencil-line"></i></a>
+                                            <div style="display: inline-block;" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="primary-tooltip" data-bs-title="Orçamento">
+                                                <a href="{{url()->current()}}/{{$item->id}}/orcamentos" class="text-reset px-1" style="font-size: 28px"> <i class="ri-money-dollar-circle-fill"></i></a>
                                             </div> 
                                             <div style="display: inline-block" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="primary-tooltip" data-bs-title="Editar registro">
                                                 <a href="{{url()->current()}}/edit/{{$item->id}}" class="text-reset fs-16 px-1"> <i class="ri-pencil-line"></i></a>

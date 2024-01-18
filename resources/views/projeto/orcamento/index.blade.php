@@ -49,9 +49,6 @@
                                             @endif
                                         @endforeach
                                         <td>
-                                            <div style="display: inline-block" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="primary-tooltip" data-bs-title="Orçamento">
-                                                <a href="{{url()->current()}}/edit/{{$item->id}}" class="text-reset fs-16 px-1"> <i class="ri-pencil-line"></i></a>
-                                            </div> 
                                             <div style="display: inline-block" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="primary-tooltip" data-bs-title="Editar registro">
                                                 <a href="{{url()->current()}}/edit/{{$item->id}}" class="text-reset fs-16 px-1"> <i class="ri-pencil-line"></i></a>
                                             </div>                                      
