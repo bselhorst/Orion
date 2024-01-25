@@ -121,6 +121,12 @@
       @canany(['projeto.create', 'projeto.read', 'projeto.update', 'projeto.delete'])
       <li class="side-nav-title">Orçamento</li>
       <li class="side-nav-item">
+        <a href="/projetos/grafico" class="side-nav-link">
+          <i class="ri-pie-chart-line"></i>
+          <span> Dashboard </span>
+        </a>
+      </li>
+      <li class="side-nav-item">
         <a href="/projetos" class="side-nav-link">
           <i class="ri-file-list-line"></i>
           <span> Projetos </span>

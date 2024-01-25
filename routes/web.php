@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProjetosDashboardController;
 use App\Http\Controllers\ProjetoController;
 use App\Http\Controllers\ProjetoOrcamentoController;
 use App\Http\Controllers\UserController;
@@ -26,6 +27,9 @@ Route::middleware('auth')->group(function() {
 
     // Projeto
     Route::prefix('projetos')->group(function (){
+        Route::get('/grafico', [ProjetosDashboardController::class, 'handleChart']);
+        Route::get('/json', [ProjetosDashboardController::class, 'json']);
+
         Route::get('/', [ProjetoController::class, 'index'])->middleware([\Illuminate\Auth\Middleware\Authorize::using('projeto.read')])->name('projeto.index');
         Route::post('/', [ProjetoController::class, 'store'])->middleware([\Illuminate\Auth\Middleware\Authorize::using('projeto.create')])->name('projeto.store');
         Route::get('/create', [ProjetoController::class, 'create'])->middleware([\Illuminate\Auth\Middleware\Authorize::using('projeto.create')])->name('projeto.create');

@@ -19,20 +19,20 @@
                 
                 <a href="index.php" class="logo-light">
                     <span class="logo-lg">
-                        <img src="assets/images/logo-branca-LARGO-removebg.png" alt="logo" style="border: 1px solid">
+                        <img src="/assets/images/logo-branca-LARGO-removebg.png" alt="logo" style="border: 1px solid">
                     </span>
                     <span class="logo-sm">
-                        <img src="assets/images/logo-branca-LARGO-removebg.png" alt="small logo" style="border: 1px solid">
+                        <img src="/assets/images/logo-branca-LARGO-removebg.png" alt="small logo" style="border: 1px solid">
                     </span>
                 </a>
 
                 
                 <a href="index.php" class="logo-dark">
                     <span class="logo-lg">
-                        <img src="assets/images/logo-branca-LARGO-removebg.png" alt="dark logo">
+                        <img src="/assets/images/logo-branca-LARGO-removebg.png" alt="dark logo">
                     </span>
                     <span class="logo-sm">
-                        <img src="assets/images/logo-branca-LARGO-removebg.png" alt="small logo" style="height: 52px">
+                        <img src="/assets/images/logo-branca-LARGO-removebg.png" alt="small logo" style="height: 52px">
                     </span>
                 </a>
             </div>
@@ -49,19 +49,19 @@
                         <div class="row g-0">
                             <div class="col">
                                 <a class="dropdown-icon-item" href="#">
-                                    <img src="assets/images/brands/github.png" alt="Github">
+                                    <img src="/assets/images/brands/github.png" alt="Github">
                                     <span>GitHub</span>
                                 </a>
                             </div>
                             <div class="col">
                                 <a class="dropdown-icon-item" href="#">
-                                    <img src="assets/images/brands/bitbucket.png" alt="bitbucket">
+                                    <img src="/assets/images/brands/bitbucket.png" alt="bitbucket">
                                     <span>Bitbucket</span>
                                 </a>
                             </div>
                             <div class="col">
                                 <a class="dropdown-icon-item" href="#">
-                                    <img src="assets/images/brands/dropbox.png" alt="dropbox">
+                                    <img src="/assets/images/brands/dropbox.png" alt="dropbox">
                                     <span>Dropbox</span>
                                 </a>
                             </div>
@@ -70,19 +70,19 @@
                         <div class="row g-0">
                             <div class="col">
                                 <a class="dropdown-icon-item" href="#">
-                                    <img src="assets/images/brands/slack.png" alt="slack">
+                                    <img src="/assets/images/brands/slack.png" alt="slack">
                                     <span>Slack</span>
                                 </a>
                             </div>
                             <div class="col">
                                 <a class="dropdown-icon-item" href="#">
-                                    <img src="assets/images/brands/dribbble.png" alt="dribbble">
+                                    <img src="/assets/images/brands/dribbble.png" alt="dribbble">
                                     <span>Dribbble</span>
                                 </a>
                             </div>
                             <div class="col">
                                 <a class="dropdown-icon-item" href="#">
-                                    <img src="assets/images/brands/behance.png" alt="Behance">
+                                    <img src="/assets/images/brands/behance.png" alt="Behance">
                                     <span>Behance</span>
                                 </a>
                             </div>
@@ -134,10 +134,10 @@
             <div class="modal-body">
                 <div class="auth-brand text-center mt-2 mb-4 position-relative top-0">
                     <a href="index.html" class="logo-dark">
-                        <span><img src="assets/images/logo-dark.png" alt="dark logo" height="22"></span>
+                        <span><img src="/assets/images/logo-dark.png" alt="dark logo" height="22"></span>
                     </a>
                     <a href="index.html" class="logo-light">
-                        <span><img src="assets/images/logo.png" alt="logo" height="22"></span>
+                        <span><img src="/assets/images/logo.png" alt="logo" height="22"></span>
                     </a>
                 </div>
 

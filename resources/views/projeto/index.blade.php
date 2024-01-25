@@ -13,6 +13,7 @@
     :data="$data" 
     /> --}}
     @php
+        $permission = 'projeto';
         $header_columns = ['ID', 'Título', 'Valor'];
         $columns = ['id', 'titulo', 'valor'];
     @endphp
@@ -22,7 +23,7 @@
                 <div class="card-body">
                     <div class="table-header">
                         <h4 class="header-title">Lista de Projetos</h4>
-                        @can('projeto.create')
+                        @can($permission.'.create')
                             <a href="{{url()->current()}}/create" class="btn btn-success btn-create">Cadastrar</a>
                         @endcan
                     </div>
@@ -51,17 +52,17 @@
                                             @endif
                                         @endforeach
                                         <td>
-                                            @can('projeto.orcamento.read')
+                                            @can($permission.'.orcamento.read')
                                                 <div style="display: inline-block;" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="primary-tooltip" data-bs-title="Orçamento">
                                                     <a href="{{url()->current()}}/{{$item->id}}/orcamentos" class="text-reset px-1" style="font-size: 20px"> <i class="ri-money-dollar-circle-fill"></i></a>
                                                 </div> 
                                             @endcan
-                                            @can('projeto.update')
+                                            @can($permission.'.update')
                                                 <div style="display: inline-block" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="primary-tooltip" data-bs-title="Editar registro">
                                                     <a href="{{url()->current()}}/edit/{{$item->id}}" class="text-reset px-1" style="font-size: 20px"> <i class="ri-pencil-line"></i></a>
                                                 </div> 
                                             @endcan
-                                            @can('projeto.delete')                                     
+                                            @can($permission.'.delete')                                     
                                                 <div style="display: inline-block" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="danger-tooltip" data-bs-title="Excluir registro">
                                                     <a href="javascript: deleteModal({{ $item->id }});" class="text-reset px-1" style="font-size: 20px"> 
                                                         <i class="ri-delete-bin-2-line"></i>
