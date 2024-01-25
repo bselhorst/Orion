@@ -5,6 +5,21 @@
 @endsection
 
 @section('content')
+    <div class="col-xxl-6 col-sm-6">
+        <div class="card widget-flat bg-primary text-white">
+            <div class="card-body">
+                <div class="float-end">
+                    <i class="ri-shopping-basket-line widget-icon bg-light-subtle rounded-circle text-primary"></i>
+                </div>
+                <h5 class="fw-normal mt-0" title="Orders">Soma total de recursos</h5>
+                <h3 class="my-3 text-white">R$ {{ number_format(@$valor_total, 2, ',', '.') }}</h3>
+                <p class="mb-0">
+                    <span class="badge bg-info me-1">{{ count(@$data) }}</span>
+                    <span class="text-nowrap">Projetos</span>
+                </p>
+            </div>
+        </div>
+    </div>
     <div id="container"></div>
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/data.js"></script>
@@ -14,7 +29,7 @@
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 <script type="text/javascript">
     var dataDashboard = <?php echo json_encode($data)?>;
-    // var dados = [{name: 'teste', drilldown: 'teste2', y: 1}];
+    var date = new Date();
     var dadosProjeto = [];
     var dadosOrcamento = [];
     dataDashboard.forEach(projeto => {
@@ -44,13 +59,12 @@
             data: dadosOrcamentoValores
         });
     });
-    console.log(dadosProjeto);
     Highcharts.chart('container', {
     chart: {
         type: 'pie'
     },
     title: {
-        text: 'Projetos. January, 2022',
+        text: 'Projetos. '+date.toLocaleString('pt-BR', {month: 'long'})+', '+date.getFullYear(),
         align: 'left'
     },
     subtitle: {
@@ -95,8 +109,6 @@
         formatter: function(){
             return '<span style="font-size:11px">'+this.point.series.name+'</span><br><span style="color:'+this.point.color+'">'+this.point.name+'</span>: <b>R$ '+Highcharts.numberFormat(this.point.y, 2, ',', '.')+'</b><br/>';
         },
-        // headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
-        // pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>R$ {point.y:,.2f}</b> reais<br/>'
     },
 
     series: [
@@ -110,50 +122,6 @@
     drilldown: {
         series: dadosOrcamento
     }
-    // drilldown: {
-    //     series: [
-    //         {
-    //             name: 'Projeto Mil Mulheres',
-    //             id: 'Projeto Mil Mulheres',
-    //             data: [
-    //                 [
-    //                     'v97.0',
-    //                     36.89
-    //                 ],
-    //                 [
-    //                     'v96.0',
-    //                     18.16
-    //                 ],
-    //                 [
-    //                     'v95.0',
-    //                     0.54
-    //                 ],
-    //                 [
-    //                     'v94.0',
-    //                     0.7
-    //                 ],
-    //             ]
-    //         },
-    //         {
-    //             name: 'Safari',
-    //             id: 'Safari',
-    //             data: [
-    //                 [
-    //                     'v15.3',
-    //                     0.1
-    //                 ],
-    //                 [
-    //                     'v15.2',
-    //                     2.01
-    //                 ],
-    //                 [
-    //                     'v15.1',
-    //                     2.29
-    //                 ],
-    //             ]
-    //         },
-    //     ]
-    // }
 });
 </script>
 @endsection

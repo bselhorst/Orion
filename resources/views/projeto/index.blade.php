@@ -5,13 +5,38 @@
 @endsection
 
 @section('content')
-    {{-- <x-table 
-    :title="'Lista de Projetos'" 
-    :description="'Abaixo a lista com todos os projetos.'" 
-    :header_columns="['ID', 'Título', 'Valor']" 
-    :columns="['id', 'titulo', 'valor']" 
-    :data="$data" 
-    /> --}}
+    {{-- <div class="row">
+        <div class="col col-md-6">
+            <div class="card widget-flat">
+                <div class="card-body">
+                    <div class="float-end">
+                        <i class="ri-group-line text-bg-info widget-icon"></i>
+                    </div>
+                    <h5 class="text-muted fw-normal mt-0" title="Number of Customers">Total de Recursos</h5>
+                    <h3 class="my-3">R$ {{ number_format(floatval(@$total_projetos), 2, ',', '.') }}</h3>
+                    <p class="mb-0 text-muted">
+                        <span class="text-success me-2"><i class="ri-arrow-up-line"></i> {{ $data->total() }}</span>
+                        <span class="text-nowrap">Projetos</span>
+                    </p>
+                </div> <!-- end card-body-->
+            </div> <!-- end card-->
+        </div>
+        <div class="col col-md-6">
+            <div class="card widget-flat">
+                <div class="card-body">
+                    <div class="float-end">
+                        <i class="ri-group-line text-bg-info widget-icon"></i>
+                    </div>
+                    <h5 class="text-muted fw-normal mt-0" title="Number of Customers">Projetos</h5>
+                    <h3 class="my-3">{{ $data->total() }}</h3>
+                    <p class="mb-0 text-muted">
+                        <span class="text-success me-2"><i class="ri-arrow-up-line"></i> 5.27%</span>
+                        <span class="text-nowrap">Since last month</span>
+                    </p>
+                </div> <!-- end card-body-->
+            </div> <!-- end card-->
+        </div>
+    </div> --}}
     @php
         $permission = 'projeto';
         $header_columns = ['ID', 'Título', 'Valor'];

@@ -15,7 +15,8 @@ class ProjetoController extends Controller
     public function index()
     {
         $data = Projeto::paginate(15);
-        return view('projeto.index', compact('data'));
+        $total_projetos = Projeto::sum('valor');
+        return view('projeto.index', compact('data', 'total_projetos'));
     }
 
     /**
@@ -120,5 +121,18 @@ class ProjetoController extends Controller
         $data = Projeto::findOrFail($id);
         $data->delete();
         return Redirect::route('projeto.index')->with('success', 'Registro excluído com sucesso!');
+    }
+
+    public function dashboard()
+    {
+        $data = Projeto::with('orcamento')->get();
+        $valor_total = Projeto::sum('valor');
+        return view('projeto.dashboard', compact('data', 'valor_total'));
+    }
+
+    public function json()
+    {
+        $data = Projeto::with('orcamento')->get();
+        return $data;
     }
 }

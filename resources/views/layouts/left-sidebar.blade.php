@@ -3,20 +3,20 @@
   <!-- Brand Logo Light -->
   <a href="index.php" class="logo logo-light">
     <span class="logo-lg">
-      <img src="{{ asset('assets/images/logo-LARGO-removebg.png') }}" alt="logo" style="height: 52px"/>
+      <img src="{{ asset('/assets/images/logo-LARGO-removebg.png') }}" alt="logo" style="height: 52px"/>
     </span>
     <span class="logo-sm" style="margin-left: -13px">
-      <img src="{{ asset('assets/images/logo-ICO-removebg.png') }}" alt="small logo" style="height: 52px" />
+      <img src="{{ asset('/assets/images/logo-ICO-removebg.png') }}" alt="small logo" style="height: 52px" />
     </span>
   </a>
 
   <!-- Brand Logo Dark -->
   <a href="index.php" class="logo logo-dark">
     <span class="logo-lg">
-      <img src="{{ asset('assets/images/logo-LARGO-removebg.png') }}" alt="dark logo" />
+      <img src="{{ asset('/assets/images/logo-LARGO-removebg.png') }}" alt="dark logo" />
     </span>
     <span class="logo-sm">
-      <img src="{{ asset('assets/images/logo-ICO-removebg.png') }}" alt="small logo" />
+      <img src="{{ asset('/assets/images/logo-ICO-removebg.png') }}" alt="small logo" />
     </span>
   </a>
 

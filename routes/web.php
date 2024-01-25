@@ -27,8 +27,8 @@ Route::middleware('auth')->group(function() {
 
     // Projeto
     Route::prefix('projetos')->group(function (){
-        Route::get('/grafico', [ProjetosDashboardController::class, 'handleChart']);
-        Route::get('/json', [ProjetosDashboardController::class, 'json']);
+        Route::get('/grafico', [ProjetoController::class, 'dashboard']);
+        Route::get('/json', [ProjetoController::class, 'json']);
 
         Route::get('/', [ProjetoController::class, 'index'])->middleware([\Illuminate\Auth\Middleware\Authorize::using('projeto.read')])->name('projeto.index');
         Route::post('/', [ProjetoController::class, 'store'])->middleware([\Illuminate\Auth\Middleware\Authorize::using('projeto.create')])->name('projeto.store');
