@@ -17,7 +17,7 @@
 
     @php
         $permission = 'user';
-        $header_columns = ['ID', 'Nome', 'Email'];
+        $header_columns = ['ID', 'Nome', 'Email', 'Permissões'];
         $columns = ['id', 'name', 'email'];
     @endphp
     <div class="row">
@@ -54,6 +54,9 @@
                                                 <td> {{ $value }} </td>
                                             @endif
                                         @endforeach
+                                        <td>
+                                            {{ $item->roles->pluck('name') }}
+                                        </td>
                                         <td>
                                             @can($permission.'.update')
                                                 <div style="display: inline-block;" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="primary-tooltip" data-bs-title="Permissões">
