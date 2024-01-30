@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Validation\Rules;
@@ -111,5 +112,25 @@ class UserController extends Controller
         $data = User::findOrFail($id);
         $data->delete();
         return Redirect::route('user.index')->with('success', 'Registro excluído com sucesso!');
+    }
+
+    public function permission(string $id)
+    {
+        $data = User::with('roles')->findOrFail($id);
+        $roles = Role::all();
+        return view('user.permission', compact(['data', 'roles']));
+    }
+
+    public function permissionUpdate(Request $request, string $id)
+    {
+        $user = User::findOrFail($id);
+        $user->syncRoles($request['permission']);
+        return Redirect::route('user.index')->with('success', 'Permissão alterada com sucesso!');
+    }
+
+    public function json()
+    {
+        $data = User::with('roles')->where('id', 1)->get();
+        return $data;
     }
 }

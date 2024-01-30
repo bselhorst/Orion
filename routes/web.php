@@ -49,11 +49,14 @@ Route::middleware('auth')->group(function() {
 
     // Users routes
     Route::prefix('users')->group(function () {
+        Route::get('/json', [UserController::class, 'json']);
         Route::get('/', [UserController::class, 'index'])->middleware([\Illuminate\Auth\Middleware\Authorize::using('user.read')])->name('user.index');
         Route::post('/', [UserController::class, 'store'])->middleware([\Illuminate\Auth\Middleware\Authorize::using('user.create')])->name('user.store');
         Route::get('/create', [UserController::class, 'create'])->middleware([\Illuminate\Auth\Middleware\Authorize::using('user.create')])->name('user.create');
         Route::get('/edit/{id}', [UserController::class, 'edit'])->middleware([\Illuminate\Auth\Middleware\Authorize::using('user.update')])->name('user.edit');
         Route::patch('/edit/{id}', [UserController::class, 'update'])->middleware([\Illuminate\Auth\Middleware\Authorize::using('user.update')])->name('user.update');
+        Route::patch('/perfil/{id}', [UserController::class, 'permissionUpdate'])->middleware([\Illuminate\Auth\Middleware\Authorize::using('user.update')])->name('user.update.permission');
+        Route::get('/perfil/{id}', [UserController::class, 'permission'])->middleware([\Illuminate\Auth\Middleware\Authorize::using('user.update')])->name('user.permission');
         Route::delete('/{id}', [UserController::class, 'destroy'])->middleware([\Illuminate\Auth\Middleware\Authorize::using('user.delete')])->name('user.destroy');
     });
 });
