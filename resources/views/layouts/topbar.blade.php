@@ -134,10 +134,10 @@
             <div class="modal-body">
                 <div class="auth-brand text-center mt-2 mb-4 position-relative top-0">
                     <a href="index.html" class="logo-dark">
-                        <span><img src="/assets/images/logo-dark.png" alt="dark logo" height="22"></span>
+                        <span><img src="/assets/images/logo-branca-LARGO-removebg.png" alt="dark logo" height="42"></span>
                     </a>
                     <a href="index.html" class="logo-light">
-                        <span><img src="/assets/images/logo.png" alt="logo" height="22"></span>
+                        <span><img src="/assets/images/logo-LARGO-removebg.png" alt="logo" height="42"></span>
                     </a>
                 </div>
 
