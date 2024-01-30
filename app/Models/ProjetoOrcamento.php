@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class ProjetoOrcamento extends Model
 {
@@ -14,6 +15,11 @@ class ProjetoOrcamento extends Model
 
     public function projeto(): BelongsTo
     {
-        return $this->belongsTo(Projeto::class);
+        return $this->belongsTo(Projeto::class, 'id_projeto');
+    }
+
+    public function despesa(): HasMany
+    {
+        return $this->hasMany(ProjetoOrcamentoDespesa::class, 'id_orcamento');
     }
 }

@@ -1,21 +1,27 @@
 @extends('layouts.scaffold')
 
 @section('title')
-    Orçamento
+    Despesas
 @endsection
 
 @section('content')
     @php
         $permission = 'projeto.orcamento';
-        $header_columns = ['ID', 'Programa de trabalho', 'Fonte', 'Natureza', 'Especificação', 'Valor'];
-        $columns = ['id', 'programa_de_trabalho', 'fonte', 'natureza_da_despesa', 'especificacao', 'valor'];
+        $header_columns = ['ID', 'Descrição', 'Unidade', 'Quantidade', 'Valor Unitário'];
+        $columns = ['id', 'descricao', 'unidade', 'quantidade', 'valor_unitario'];
     @endphp
     <div class="row">
         <div class="col-xl-12">
             <div class="card">
                 <div class="card-body">
                     <div class="table-header">
-                        <h4 class="header-title"><div>Lista de Orçamentos do Projeto: <b>{{ $projeto->titulo }}</b></div></h4>
+                        <h4 class="header-title">
+                            <div style="display: flex; flex-direction: column">
+                                <div>Projeto: <a href="{{ route('projeto.orcamento.index', $orcamento->projeto->id) }}"><b>{{ $orcamento->projeto->titulo }}</b></a></div>                            
+                                <div>Lista de Orçamentos do Orçamento: <b>{{ $orcamento->especificacao }}</b></div>                            
+                            </div>
+                            {{-- Lista de Despesas do Orçamento: <b>{{ $orcamento->especificacao }}</b> --}}
+                        </h4>
                         @can(@$permission.'.create')
                             <a href="{{url()->current()}}/create" class="btn btn-success btn-create">Cadastrar</a>
                         @endcan
@@ -38,16 +44,13 @@
                                     <tr>
                                         @foreach ($columns as $column)
                                             @php($value = $item->$column)
-                                            @if ($column == 'valor')
+                                            @if ($column == 'valor_unitario')
                                                 <td>{{ number_format( floatval($value), 2, ',', '.') }} </td>
                                             @else
                                                 <td> {{ $value }} </td>
                                             @endif
                                         @endforeach
                                         <td>
-                                            <div style="display: inline-block" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="primary-tooltip" data-bs-title="Despesas">
-                                                <a href="{{url()->current()}}/{{$item->id}}/despesas" class="text-reset px-1" style="font-size: 20px"> <i class="ri-money-dollar-circle-fill"></i></a>
-                                            </div>
                                             @can(@$permission.'.update')
                                                 <div style="display: inline-block" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="primary-tooltip" data-bs-title="Editar registro">
                                                     <a href="{{url()->current()}}/edit/{{$item->id}}" class="text-reset px-1" style="font-size: 20px"> <i class="ri-pencil-line"></i></a>
