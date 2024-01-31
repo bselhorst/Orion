@@ -10,6 +10,53 @@
         $header_columns = ['ID', 'Programa de trabalho', 'Fonte', 'Natureza', 'Especificação', 'Valor'];
         $columns = ['id', 'programa_de_trabalho', 'fonte', 'natureza_da_despesa', 'especificacao', 'valor'];
     @endphp
+    <div class='row'>
+        <div class="col-xxl-4 col-sm-6">
+            <div class="card widget-flat bg-white">
+                <div class="card-body">
+                    <div class="float-end">
+                        <i class="ri-shopping-basket-line widget-icon bg-light-subtle rounded-circle text-primary"></i>
+                    </div>
+                    <h5 class="fw-normal mt-0" title="Orders">Total do projeto</h5>
+                    <h3 class="my-3">R$ {{ number_format(@$projeto->valor, 2, ',', '.') }}</h3>
+                    <p class="mb-0 text-muted">
+                        <span class="text-success me-2">{{ count(@$data) }}</span>
+                        <span class="text-nowrap">Orçamento(s)</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-xxl-4 col-sm-6">
+            <div class="card widget-flat bg-white">
+                <div class="card-body">
+                    <div class="float-end">
+                        <i class="ri-shopping-basket-line widget-icon bg-light-subtle rounded-circle text-primary"></i>
+                    </div>
+                    <h5 class="fw-normal mt-0" title="Orders">Recurso não distribuído</h5>
+                    <h3 class="my-3">R$ {{ number_format(@$projeto->valor-$data->sum('valor'), 2, ',', '.') }}</h3>
+                    <p class="mb-0 text-muted">
+                        <span class="text-success me-2"><i class="ri-pie-chart-fill"></i> {{ number_format(((@$projeto->valor-@$data->sum('valor'))/@$projeto->valor)*100, 2) }}%</span>
+                        <span class="text-nowrap">Do valor total</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-xxl-4 col-sm-6">
+            <div class="card widget-flat bg-white">
+                <div class="card-body">
+                    <div class="float-end">
+                        <i class="ri-shopping-basket-line widget-icon bg-light-subtle rounded-circle text-primary"></i>
+                    </div>
+                    <h5 class="fw-normal mt-0" title="Orders">Recurso distribuído</h5>
+                    <h3 class="my-3">R$ {{ number_format((@$data->sum('valor')), 2, ',', '.') }}</h3>
+                    <p class="mb-0 text-muted">
+                        <span class="text-success me-2"><i class="ri-pie-chart-fill"></i> {{ number_format((@$data->sum('valor')/@$projeto->valor)*100, 2) }}%</span>
+                        <span class="text-nowrap">Do valor total</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="row">
         <div class="col-xl-12">
             <div class="card">

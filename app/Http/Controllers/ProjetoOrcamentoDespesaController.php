@@ -8,6 +8,7 @@ use App\Models\Projeto;
 use App\Models\ProjetoOrcamento;
 use App\Models\ProjetoOrcamentoDespesa;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\DB;
 
 class ProjetoOrcamentoDespesaController extends Controller
 {
@@ -16,7 +17,7 @@ class ProjetoOrcamentoDespesaController extends Controller
      */
     public function index(string $id_projeto, string $id_orcamento)
     {
-        $data = ProjetoOrcamentoDespesa::where('id_orcamento', $id_orcamento)->paginate(10);
+        $data = ProjetoOrcamentoDespesa::select('*', DB::raw('(quantidade * valor_unitario) as total'))->where('id_orcamento', $id_orcamento)->paginate(10);
         $orcamento = ProjetoOrcamento::with('projeto')->findOrFail($id_orcamento);
         return view('projeto.orcamento.despesa.index', compact('data', 'orcamento'));
     }

@@ -11,6 +11,53 @@
         $columns = ['id', 'descricao', 'unidade', 'quantidade', 'valor_unitario'];
     @endphp
     <div class="row">
+        <div class="col-xxl-4 col-sm-6">
+            <div class="card widget-flat bg-white">
+                <div class="card-body">
+                    <div class="float-end">
+                        <i class="ri-shopping-basket-line widget-icon bg-light-subtle rounded-circle text-primary"></i>
+                    </div>
+                    <h5 class="fw-normal mt-0" title="Orders">Total do Orçamento</h5>
+                    <h3 class="my-3">R$ {{ number_format(@$orcamento->valor, 2, ',', '.') }}</h3>
+                    <p class="mb-0 text-muted">
+                        <span class="text-success me-2">{{ count(@$data) }}</span>
+                        <span class="text-nowrap">Orçamento(s)</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-xxl-4 col-sm-6">
+            <div class="card widget-flat bg-white">
+                <div class="card-body">
+                    <div class="float-end">
+                        <i class="ri-shopping-basket-line widget-icon bg-light-subtle rounded-circle text-primary"></i>
+                    </div>
+                    <h5 class="fw-normal mt-0" title="Orders">Recurso não distribuído</h5>
+                    <h3 class="my-3">R$ {{ number_format(@$orcamento->valor-@$data->sum('total'), 2, ',', '.') }}</h3>
+                    <p class="mb-0 text-muted">
+                        <span class="text-success me-2">{{ number_format(((@$orcamento->valor-@$data->sum('total'))/@$orcamento->valor)*100, 2) }}%</span>
+                        <span class="text-nowrap">Do valor total</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-xxl-4 col-sm-6">
+            <div class="card widget-flat bg-white">
+                <div class="card-body">
+                    <div class="float-end">
+                        <i class="ri-shopping-basket-line widget-icon bg-light-subtle rounded-circle text-primary"></i>
+                    </div>
+                    <h5 class="fw-normal mt-0" title="Orders">Recurso distribuído</h5>
+                    <h3 class="my-3">R$ {{ number_format(@$data->sum('total'), 2, ',', '.') }}</h3>
+                    <p class="mb-0 text-muted">
+                        <span class="text-success me-2">{{ number_format((@$data->sum('total')/$orcamento->valor)*100, 2, ',', '.') }}%</span>
+                        <span class="text-nowrap">Do valor total</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-xl-12">
             <div class="card">
                 <div class="card-body">
@@ -18,7 +65,7 @@
                         <h4 class="header-title">
                             <div style="display: flex; flex-direction: column">
                                 <div>Projeto: <a href="{{ route('projeto.orcamento.index', $orcamento->projeto->id) }}"><b>{{ $orcamento->projeto->titulo }}</b></a></div>                            
-                                <div>Lista de Orçamentos do Orçamento: <b>{{ $orcamento->especificacao }}</b></div>                            
+                                <div>Lista de Despesas do Orçamento: <b>{{ $orcamento->especificacao }}</b></div>                            
                             </div>
                             {{-- Lista de Despesas do Orçamento: <b>{{ $orcamento->especificacao }}</b> --}}
                         </h4>
