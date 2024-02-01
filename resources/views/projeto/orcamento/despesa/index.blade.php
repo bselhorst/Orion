@@ -21,7 +21,7 @@
                     <h3 class="my-3">R$ {{ number_format(@$orcamento->valor, 2, ',', '.') }}</h3>
                     <p class="mb-0 text-muted">
                         <span class="text-success me-2">{{ count(@$data) }}</span>
-                        <span class="text-nowrap">Orçamento(s)</span>
+                        <span class="text-nowrap">Despesa(s)</span>
                     </p>
                 </div>
             </div>
@@ -35,7 +35,7 @@
                     <h5 class="fw-normal mt-0" title="Orders">Recurso não distribuído</h5>
                     <h3 class="my-3">R$ {{ number_format(@$orcamento->valor-@$data->sum('total'), 2, ',', '.') }}</h3>
                     <p class="mb-0 text-muted">
-                        <span class="text-success me-2">{{ number_format(((@$orcamento->valor-@$data->sum('total'))/@$orcamento->valor)*100, 2) }}%</span>
+                        <span class="text-success me-2"><i class="ri-pie-chart-fill"></i>{{ number_format(((@$orcamento->valor-@$data->sum('total'))/@$orcamento->valor)*100, 2) }}%</span>
                         <span class="text-nowrap">Do valor total</span>
                     </p>
                 </div>
@@ -50,7 +50,7 @@
                     <h5 class="fw-normal mt-0" title="Orders">Recurso distribuído</h5>
                     <h3 class="my-3">R$ {{ number_format(@$data->sum('total'), 2, ',', '.') }}</h3>
                     <p class="mb-0 text-muted">
-                        <span class="text-success me-2">{{ number_format((@$data->sum('total')/$orcamento->valor)*100, 2, ',', '.') }}%</span>
+                        <span class="text-success me-2"><i class="ri-pie-chart-fill"></i>{{ number_format((@$data->sum('total')/$orcamento->valor)*100, 2, ',', '.') }}%</span>
                         <span class="text-nowrap">Do valor total</span>
                     </p>
                 </div>
