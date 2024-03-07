@@ -7,7 +7,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+<!-- ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
@@ -19,20 +19,20 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 - [Robust background job processing](https://laravel.com/docs/queues).
 - [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Laravel is accessible, powerful, and provides tools required for large, robust applications. -->
 
 # Laravel Docker Starter Kit
 - Laravel v10.x
 - PHP v8.2.x
 - MySQL v8.1
-<!-- - MariaDB v10.11 -->
-<!-- - phpMyAdmin v5.x -->
-<!-- - Mailpit v1.x -->
 - Node.js v18.x
 - NPM v10.x
 - Yarn v1.x
 - Vite v5.x
 - Rector v1.x
+<!-- - MariaDB v10.11 -->
+<!-- - phpMyAdmin v5.x -->
+<!-- - Mailpit v1.x -->
 <!-- - Redis v7.2.x -->
 
 # How To Deploy
@@ -52,7 +52,7 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 - `php artisan migrate`
 - `php artisan db:seed`
 
-## Learning Laravel
+<!-- ## Learning Laravel
 
 Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
@@ -90,7 +90,7 @@ In order to ensure that the Laravel community is welcoming to all, please review
 
 ## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed. -->
 
 ## License
 
