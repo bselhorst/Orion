@@ -47,10 +47,20 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 
 # How To Migrate and Seed
 
-### To install the project !
+### To migrate and seed !
 - `docker compose exec php bash`
 - `php artisan migrate`
 - `php artisan db:seed`
+
+# Notes
+## Laravel App
+- URL: http://localhost
+
+## .ENV
+- DB_HOST: db
+- DB_DATABASE: orion
+- DB_USERNAME: orion
+- DB_PASSWORD: orion
 
 <!-- ## Learning Laravel
 
