@@ -21,6 +21,37 @@ Laravel is a web application framework with expressive, elegant syntax. We belie
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
+# Laravel Docker Starter Kit
+- Laravel v10.x
+- PHP v8.2.x
+- MySQL v8.1
+<!-- - MariaDB v10.11 -->
+<!-- - phpMyAdmin v5.x -->
+<!-- - Mailpit v1.x -->
+- Node.js v18.x
+- NPM v10.x
+- Yarn v1.x
+- Vite v5.x
+- Rector v1.x
+<!-- - Redis v7.2.x -->
+
+# How To Deploy
+
+### For first time only !
+- `docker compose up -d --build`
+- `docker compose exec php bash`
+- `composer setup` or `composer install`
+
+### From the second time onwards
+- `docker compose up -d`
+
+# How To Migrate and Seed
+
+### To install the project !
+- `docker compose exec php bash`
+- `php artisan migrate`
+- `php artisan db:seed`
+
 ## Learning Laravel
 
 Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
