@@ -14,9 +14,9 @@
         <div class="col-xxl-4 col-sm-6">
             <div class="card widget-flat bg-white">
                 <div class="card-body">
-                    <div class="float-end">
+                    {{-- <div class="float-end">
                         <i class="ri-shopping-basket-line widget-icon bg-light-subtle rounded-circle text-primary"></i>
-                    </div>
+                    </div> --}}
                     <h5 class="fw-normal mt-0" title="Orders">Total do Orçamento</h5>
                     <h3 class="my-3">R$ {{ number_format(@$orcamento->valor, 2, ',', '.') }}</h3>
                     <p class="mb-0 text-muted">
@@ -29,9 +29,9 @@
         <div class="col-xxl-4 col-sm-6">
             <div class="card widget-flat bg-white">
                 <div class="card-body">
-                    <div class="float-end">
+                    {{-- <div class="float-end">
                         <i class="ri-shopping-basket-line widget-icon bg-light-subtle rounded-circle text-primary"></i>
-                    </div>
+                    </div> --}}
                     <h5 class="fw-normal mt-0" title="Orders">Recurso não distribuído</h5>
                     <h3 class="my-3">R$ {{ number_format(@$orcamento->valor-@$data->sum('total'), 2, ',', '.') }}</h3>
                     <p class="mb-0 text-muted">
@@ -44,9 +44,9 @@
         <div class="col-xxl-4 col-sm-6">
             <div class="card widget-flat bg-white">
                 <div class="card-body">
-                    <div class="float-end">
+                    {{-- <div class="float-end">
                         <i class="ri-shopping-basket-line widget-icon bg-light-subtle rounded-circle text-primary"></i>
-                    </div>
+                    </div> --}}
                     <h5 class="fw-normal mt-0" title="Orders">Recurso distribuído</h5>
                     <h3 class="my-3">R$ {{ number_format(@$data->sum('total'), 2, ',', '.') }}</h3>
                     <p class="mb-0 text-muted">
