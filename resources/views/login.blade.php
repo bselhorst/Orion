@@ -26,7 +26,7 @@
 
                 <div class="my-auto">
                     <!-- title-->
-                    <h4 class="mt-0">Login</h4>
+                    <h4 class="mt-0">Login2</h4>
                     <p class="text-muted mb-4">Entre com seu email e senha para acessar o sistema</p>
 
                     <!-- form -->
