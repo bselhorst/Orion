@@ -1,0 +1,54 @@
+2024-03-07T14:43:17.680817Z 0 [System] [MY-015017] [Server] MySQL Server Initialization - start.
+2024-03-07T14:43:17.682285Z 0 [Warning] [MY-011068] [Server] The syntax '--skip-host-cache' is deprecated and will be removed in a future release. Please use SET GLOBAL host_cache_size=0 instead.
+2024-03-07T14:43:17.682364Z 0 [Warning] [MY-010918] [Server] 'default_authentication_plugin' is deprecated and will be removed in a future release. Please use authentication_policy instead.
+2024-03-07T14:43:17.682379Z 0 [System] [MY-013169] [Server] /usr/sbin/mysqld (mysqld 8.1.0) initializing of server in progress as process 81
+2024-03-07T14:43:17.692983Z 0 [Warning] [MY-010159] [Server] Setting lower_case_table_names=2 because file system for /var/lib/mysql/ is case insensitive
+2024-03-07T14:43:17.716013Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2024-03-07T14:43:20.425548Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2024-03-07T14:43:23.743325Z 6 [Warning] [MY-010453] [Server] root@localhost is created with an empty password ! Please consider switching off the --initialize-insecure option.
+2024-03-07T14:43:24.463510Z 6 [Warning] [MY-013360] [Server] Plugin mysql_native_password reported: ''mysql_native_password' is deprecated and will be removed in a future release. Please use caching_sha2_password instead'
+2024-03-07T14:43:41.061145Z 0 [System] [MY-015018] [Server] MySQL Server Initialization - end.
+2024-03-07T14:43:41.108821Z 0 [System] [MY-015015] [Server] MySQL Server - start.
+2024-03-07T14:43:41.337490Z 0 [Warning] [MY-011068] [Server] The syntax '--skip-host-cache' is deprecated and will be removed in a future release. Please use SET GLOBAL host_cache_size=0 instead.
+2024-03-07T14:43:41.352214Z 0 [Warning] [MY-010918] [Server] 'default_authentication_plugin' is deprecated and will be removed in a future release. Please use authentication_policy instead.
+2024-03-07T14:43:41.352307Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.1.0) starting as process 125
+2024-03-07T14:43:41.363757Z 0 [Warning] [MY-010159] [Server] Setting lower_case_table_names=2 because file system for /var/lib/mysql/ is case insensitive
+2024-03-07T14:43:41.412808Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2024-03-07T14:43:43.228190Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2024-03-07T14:43:43.855832Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2024-03-07T14:43:43.856199Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2024-03-07T14:43:43.866493Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+2024-03-07T14:43:43.911095Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Socket: /var/run/mysqld/mysqlx.sock
+2024-03-07T14:43:43.911197Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.1.0'  socket: '/var/run/mysqld/mysqld.sock'  port: 0  MySQL Community Server - GPL.
+2024-03-07T14:43:43.976469Z 8 [Warning] [MY-013360] [Server] Plugin mysql_native_password reported: ''mysql_native_password' is deprecated and will be removed in a future release. Please use caching_sha2_password instead'
+2024-03-07T14:44:09.140111Z 9 [Warning] [MY-013360] [Server] Plugin mysql_native_password reported: ''mysql_native_password' is deprecated and will be removed in a future release. Please use caching_sha2_password instead'
+2024-03-07T14:44:09.145072Z 9 [Warning] [MY-013360] [Server] Plugin mysql_native_password reported: ''mysql_native_password' is deprecated and will be removed in a future release. Please use caching_sha2_password instead'
+2024-03-07T14:44:09.154605Z 9 [Warning] [MY-013360] [Server] Plugin mysql_native_password reported: ''mysql_native_password' is deprecated and will be removed in a future release. Please use caching_sha2_password instead'
+2024-03-07T14:44:09.178074Z 10 [Warning] [MY-013360] [Server] Plugin mysql_native_password reported: ''mysql_native_password' is deprecated and will be removed in a future release. Please use caching_sha2_password instead'
+2024-03-07T14:44:09.201792Z 11 [Warning] [MY-013360] [Server] Plugin mysql_native_password reported: ''mysql_native_password' is deprecated and will be removed in a future release. Please use caching_sha2_password instead'
+2024-03-07T14:44:09.206262Z 11 [Warning] [MY-013360] [Server] Plugin mysql_native_password reported: ''mysql_native_password' is deprecated and will be removed in a future release. Please use caching_sha2_password instead'
+2024-03-07T14:44:09.221189Z 12 [Warning] [MY-013360] [Server] Plugin mysql_native_password reported: ''mysql_native_password' is deprecated and will be removed in a future release. Please use caching_sha2_password instead'
+2024-03-07T14:44:09.261235Z 13 [Warning] [MY-013360] [Server] Plugin mysql_native_password reported: ''mysql_native_password' is deprecated and will be removed in a future release. Please use caching_sha2_password instead'
+2024-03-07T14:44:09.288616Z 13 [System] [MY-013172] [Server] Received SHUTDOWN from user root. Shutting down mysqld (Version: 8.1.0).
+2024-03-07T14:44:10.744338Z 0 [System] [MY-010910] [Server] /usr/sbin/mysqld: Shutdown complete (mysqld 8.1.0)  MySQL Community Server - GPL.
+2024-03-07T14:44:10.749451Z 0 [System] [MY-015016] [Server] MySQL Server - end.
+2024-03-07T14:44:11.335849Z 0 [System] [MY-015015] [Server] MySQL Server - start.
+2024-03-07T14:44:11.562405Z 0 [Warning] [MY-011068] [Server] The syntax '--skip-host-cache' is deprecated and will be removed in a future release. Please use SET GLOBAL host_cache_size=0 instead.
+2024-03-07T14:44:11.574722Z 0 [Warning] [MY-010918] [Server] 'default_authentication_plugin' is deprecated and will be removed in a future release. Please use authentication_policy instead.
+2024-03-07T14:44:11.574751Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.1.0) starting as process 1
+2024-03-07T14:44:11.586413Z 0 [Warning] [MY-010159] [Server] Setting lower_case_table_names=2 because file system for /var/lib/mysql/ is case insensitive
+2024-03-07T14:44:11.616455Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+2024-03-07T14:44:12.962939Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+2024-03-07T14:44:13.466637Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+2024-03-07T14:44:13.466987Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+2024-03-07T14:44:13.481794Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+2024-03-07T14:44:13.540186Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060, socket: /var/run/mysqld/mysqlx.sock
+2024-03-07T14:44:13.540315Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.1.0'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server - GPL.
+2024-03-07T14:46:26.217104Z 0 [System] [MY-013172] [Server] Received SHUTDOWN from user <via user signal>. Shutting down mysqld (Version: 8.1.0).
+2024-03-07T14:46:27.050552Z 0 [System] [MY-010910] [Server] /usr/sbin/mysqld: Shutdown complete (mysqld 8.1.0)  MySQL Community Server - GPL.
+2024-03-07T14:46:27.052110Z 0 [System] [MY-015016] [Server] MySQL Server - end.
+2024-03-07T14:46:28.410046Z 0 [System] [MY-015015] [Server] MySQL Server - start.
+2024-03-07T14:46:28.614991Z 0 [Warning] [MY-011068] [Server] The syntax '--skip-host-cache' is deprecated and will be removed in a future release. Please use SET GLOBAL host_cache_size=0 instead.
+2024-03-07T14:46:28.624330Z 0 [Warning] [MY-010918] [Server] 'default_authentication_plugin' is deprecated and will be removed in a future release. Please use authentication_policy instead.
+2024-03-07T14:46:28.624357Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.1.0) starting as process 1
+2024-03-07T14:46:28.632879Z 0 [Warning] [MY-010159] [Server] Setting lower_case_table_names=2 because file system for /var/lib/mysql/ is case insensitive
