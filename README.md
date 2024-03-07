@@ -56,7 +56,7 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 ## Laravel App
 - URL: http://localhost
 
-## .ENV
+## .env
 - DB_HOST: db
 - DB_DATABASE: orion
 - DB_USERNAME: orion
