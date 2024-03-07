@@ -1,7 +1,7 @@
 @extends('layouts.scaffold')
 
 @section('title')
-    Teste2
+    Teste
 @endsection
 
 @section('content')
