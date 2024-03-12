@@ -16,7 +16,7 @@ class ProjetoController extends Controller
     {
         $data = Projeto::paginate(15);
         $total_projetos = Projeto::sum('valor');
-        return view('projeto.index', compact('data', 'total_projetos'));
+        return view('projeto.index', ['data' => $data, 'total_projetos' => $total_projetos]);
     }
 
     /**
