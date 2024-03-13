@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Projeto;
 use App\Models\ProjetoOrcamento;
 use App\Models\ProjetoOrcamentoDespesa;
+use App\Models\AuxCept;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\DB;
 
@@ -27,7 +28,8 @@ class ProjetoOrcamentoDespesaController extends Controller
      */
     public function create(string $id_projeto, string $id_orcamento)
     {
-        return view('projeto.orcamento.despesa.form', compact('id_projeto', 'id_orcamento'));
+        $cepts = AuxCept::all();
+        return view('projeto.orcamento.despesa.form', compact('id_projeto', 'id_orcamento', 'cepts'));
     }
 
     /**
@@ -46,6 +48,7 @@ class ProjetoOrcamentoDespesaController extends Controller
 
         ProjetoOrcamentoDespesa::create([
             'id_orcamento' => $id_orcamento,
+            'id_aux_cept' => @$request->select_cept,
             'descricao' => $request->descricao,
             'unidade' => $request->unidade,
             'quantidade' => $request->quantidade,
@@ -69,7 +72,8 @@ class ProjetoOrcamentoDespesaController extends Controller
     public function edit(string $id_projeto, string $id_orcamento, string $id)
     {
         $data = ProjetoOrcamentoDespesa::findOrFail($id);
-        return view('projeto.orcamento.despesa.form', compact('data', 'id_projeto', 'id_orcamento'));
+        $cepts = AuxCept::all();
+        return view('projeto.orcamento.despesa.form', compact('data', 'id_projeto', 'id_orcamento', 'cepts'));
     }
 
     /**
@@ -89,6 +93,7 @@ class ProjetoOrcamentoDespesaController extends Controller
 
         $data->update([
             'id_orcamento' => $id_orcamento,
+            'id_aux_cept' => $request->select_cept,
             'descricao' => $request->descricao,
             'unidade' => $request->unidade,
             'quantidade' => $request->quantidade,

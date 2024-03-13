@@ -10,7 +10,7 @@ class ProjetoOrcamentoDespesa extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['id_orcamento', 'descricao', 'unidade', 'quantidade', 'valor_unitario'];
+    protected $fillable = ['id_orcamento', 'id_aux_cept', 'descricao', 'unidade', 'quantidade', 'valor_unitario'];
 
     public function orcamento(): BelongsTo
     {

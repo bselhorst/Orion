@@ -62,6 +62,9 @@
 
     <script src="/assets/js/jquery.mask.min.js"></script>
 
+    <!--  Select2 Plugin Js -->
+    <script src="/assets/js/select2.min.js"></script>
+
     <!-- App js -->
     <script src="/assets/js/app.js"></script>
 
@@ -78,6 +81,8 @@
             @endif
         });
     </script>
+
+    @stack('custom_scripts')
 
 </body>
 
